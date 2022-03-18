@@ -93,7 +93,6 @@ E_c8_monoms_p = P(E_c8_monoms)
 E_c9_coeffs_p = P(E_c9_coeffs)
 E_c9_monoms_p = P(E_c9_monoms)
 
-
 print(E_c1_monoms_p)
 
 assert(E_det_monoms_p == E_c1_monoms_p)
