@@ -2,10 +2,10 @@ from sympy import *
 from sympy.combinatorics import Permutation
 
 x,y,z = symbols('x y z', reaL=True)
-e11,e21,e31,e41,e51,e61,e71,e81,e91 = symbols('e00_1 e10_1 e20_1 e01_1 e11_1 e21_1 e02_1 e12_1 e22_1', real=True)
-e12,e22,e32,e42,e52,e62,e72,e82,e92 = symbols('e00_2 e10_2 e20_2 e01_2 e11_2 e21_2 e02_2 e12_2 e22_2', real=True)
-e13,e23,e33,e43,e53,e63,e73,e83,e93 = symbols('e00_3 e10_3 e20_3 e01_3 e11_3 e21_3 e02_3 e12_3 e22_3', real=True)
-e14,e24,e34,e44,e54,e64,e74,e84,e94 = symbols('e00_4 e10_4 e20_4 e01_4 e11_4 e21_4 e02_4 e12_4 e22_4', real=True)
+e11,e21,e31,e41,e51,e61,e71,e81,e91 = symbols('E1[(0_0)] E1[(1_0)] E1[(2_0)] E1[(0_1)] E1[(1_1)] E1[(2_1)] E1[(0_2)] E1[(1_2)] E1[(2_2)]', real=True)
+e12,e22,e32,e42,e52,e62,e72,e82,e92 = symbols('E2[(0_0)] E2[(1_0)] E2[(2_0)] E2[(0_1)] E2[(1_1)] E2[(2_1)] E2[(0_2)] E2[(1_2)] E2[(2_2)]', real=True)
+e13,e23,e33,e43,e53,e63,e73,e83,e93 = symbols('E3[(0_0)] E3[(1_0)] E3[(2_0)] E3[(0_1)] E3[(1_1)] E3[(2_1)] E3[(0_2)] E3[(1_2)] E3[(2_2)]', real=True)
+e14,e24,e34,e44,e54,e64,e74,e84,e94 = symbols('E4[(0_0)] E4[(1_0)] E4[(2_0)] E4[(0_1)] E4[(1_1)] E4[(2_1)] E4[(0_2)] E4[(1_2)] E4[(2_2)]', real=True)
 
 E1 = Matrix([[e11,e21,e31],[e41,e51,e61],[e71,e81,e91]]).transpose()
 E2 = Matrix([[e12,e22,e32],[e42,e52,e62],[e72,e82,e92]]).transpose()
@@ -110,59 +110,69 @@ assert(E_det_monoms_p == E_c9_monoms_p)
 with open('/mnt/d/Workspace/Epipolar/det_coeffs.txt','w') as f:
     columns = str(E_det_coeffs).split(',')
     for c in columns:
-        f.write(c)
+        s = c.replace('_',',').replace('**2','.powi(2)').replace('**3','.powi(3)').replace('3*','3.0*').replace('2*','2.0*').replace('6*','6.0*')
+        f.write(s)
         f.write(',\n')
 
 with open('/mnt/d/Workspace/Epipolar/c1_coeffs.txt','w') as f:
     columns = str(E_c1_coeffs).split(',')
     for c in columns:
-        f.write(c)
+        s = c.replace('_',',').replace('**2','.powi(2)').replace('**3','.powi(3)').replace('3*','3.0*').replace('2*','2.0*').replace('6*','6.0*')
+        f.write(s)
         f.write(',\n')
 
 with open('/mnt/d/Workspace/Epipolar/c2_coeffs.txt','w') as f:
     columns = str(E_c2_coeffs).split(',')
     for c in columns:
-        f.write(c)
+        s = c.replace('_',',').replace('**2','.powi(2)').replace('**3','.powi(3)').replace('3*','3.0*').replace('2*','2.0*').replace('6*','6.0*')
+        f.write(s)
         f.write(',\n')
 
 with open('/mnt/d/Workspace/Epipolar/c3_coeffs.txt','w') as f:
     columns = str(E_c3_coeffs).split(',')
     for c in columns:
-        f.write(c)
+        s = c.replace('_',',').replace('**2','.powi(2)').replace('**3','.powi(3)').replace('3*','3.0*').replace('2*','2.0*').replace('6*','6.0*')
+        f.write(s)
         f.write(',\n')
 
 with open('/mnt/d/Workspace/Epipolar/c4_coeffs.txt','w') as f:
     columns = str(E_c4_coeffs).split(',')
     for c in columns:
-        f.write(c)
+        s = c.replace('_',',').replace('**2','.powi(2)').replace('**3','.powi(3)').replace('3*','3.0*').replace('2*','2.0*').replace('6*','6.0*')
+        f.write(s)
         f.write(',\n')
 
 with open('/mnt/d/Workspace/Epipolar/c5_coeffs.txt','w') as f:
     columns = str(E_c5_coeffs).split(',')
     for c in columns:
-        f.write(c)
+        s = c.replace('_',',').replace('**2','.powi(2)').replace('**3','.powi(3)').replace('3*','3.0*').replace('2*','2.0*').replace('6*','6.0*')
+        f.write(s)
         f.write(',\n')
 
 with open('/mnt/d/Workspace/Epipolar/c6_coeffs.txt','w') as f:
     columns = str(E_c6_coeffs).split(',')
     for c in columns:
-        f.write(c)
+        s = c.replace('_',',').replace('**2','.powi(2)').replace('**3','.powi(3)').replace('3*','3.0*').replace('2*','2.0*').replace('6*','6.0*')
+        f.write(s)
         f.write(',\n')
 
 with open('/mnt/d/Workspace/Epipolar/c7_coeffs.txt','w') as f:
     columns = str(E_c7_coeffs).split(',')
     for c in columns:
-        f.write(c)
+        s = c.replace('_',',').replace('**2','.powi(2)').replace('**3','.powi(3)').replace('3*','3.0*').replace('2*','2.0*').replace('6*','6.0*')
+        f.write(s)
         f.write(',\n')
 
 with open('/mnt/d/Workspace/Epipolar/c8_coeffs.txt','w') as f:
     columns = str(E_c8_coeffs).split(',')
     for c in columns:
-        f.write(c)
+        s = c.replace('_',',').replace('**2','.powi(2)').replace('**3','.powi(3)').replace('3*','3.0*').replace('2*','2.0*').replace('6*','6.0*')
+        f.write(s)
         f.write(',\n')
 
 with open('/mnt/d/Workspace/Epipolar/c9_coeffs.txt','w') as f:
     columns = str(E_c9_coeffs).split(',')
     for c in columns:
-        f.write(c)
+        s = c.replace('_',',').replace('**2','.powi(2)').replace('**3','.powi(3)').replace('3*','3.0*').replace('2*','2.0*').replace('6*','6.0*')
+        f.write(s)
         f.write(',\n')
